@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+        {% load static from staticfiles %}
+<html>
+<head>
+    <title>Users</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>My User App</h1>
+            <h4>Cookie Language is {{ language }}</h4>
+            <h4>Session Language is {{ session_lang }}</h4>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="{% url 'users:index' %}" method="POST">
+                    {% csrf_token %}
+                    {{ new_user.as_p }}
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div class="col-md-4">
+                {% if messages %}
+                    {% for message in messages %}
+                        <h5>{{ message }}</h5>
+                    {% endfor %}
+                {% endif %}
+                <a href="{% url 'users:u_login' %}"><h4>Login</h4></a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+
+    {% if all_users %}
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align: center;">Users</h1>
+            {% for user in all_users %}
+                <li style="list-style-type: none;">
+                    <a href="{% url 'users:detail' user.id %}">{{ user.first_name }} {{ user.last_name }}</a>
+                </li>
+            {% endfor %}
+    {% else %}
+            <p>No users available.</p>
+        </div>
+    </div>
+    {% endif %}
+
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</body>
+</html>
