@@ -1,3 +1,7 @@
 body {
-    background-color: white;
+  background-image: url(../inc/pt.jpg);
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
 }

@@ -557,7 +557,10 @@ a.bg-warning:hover {
   background-color: #f7ecb5;
 }
 .bg-danger {
+  padding: 10px;
+  border-radius: 5px;
   background-color: #f2dede;
+  border: 1px solid #dd3c10;
 }
 a.bg-danger:hover {
   background-color: #e4b9b9;
@@ -1420,7 +1423,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  /*border-top: 1px solid #ddd;*/
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -1514,7 +1517,21 @@ table th[class*="col-"] {
 .table > thead > tr.success > th,
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
-  background-color: #dff0d8;
+  background-color: #8ee39a;
+}
+.table > thead > tr > td.trophy,
+.table > tbody > tr > td.trophy,
+.table > tfoot > tr > td.trophy,
+.table > thead > tr > th.trophy,
+.table > tbody > tr > th.trophy,
+.table > tfoot > tr > th.trophy,
+.table > thead > tr.trophy > td,
+.table > tbody > tr.trophy > td,
+.table > tfoot > tr.trophy > td,
+.table > thead > tr.trophy > th,
+.table > tbody > tr.trophy > th,
+.table > tfoot > tr.trophy > th {
+  background-color: #f4f673;
 }
 .table-hover > tbody > tr > td.success:hover,
 .table-hover > tbody > tr > th.success:hover,
@@ -1708,8 +1725,8 @@ output {
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  -webkit-box-shadow: inset 0 4px 4px rgba(0,0,0,.075), 0 0 8px rgba(226, 158, 0, .6);
+          box-shadow: inset 0 4px 4px rgba(0,0,0,.075), 0 0 8px rgba(226, 158, 0, .6);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -3783,7 +3800,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 7.5px 15px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;

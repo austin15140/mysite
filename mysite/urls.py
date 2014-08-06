@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^users/', include('users.urls', namespace='users')),
     url(r'^$', include('home.urls', namespace='home')),
+    url(r'^email/', include('signups.urls', namespace='signups')),
 )
 
 if settings.DEBUG:

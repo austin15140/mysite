@@ -37,10 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djcelery',
+    'MySQLdb',
     'polls',
     'south',
     'users',
     'home',
+    'signups',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -69,8 +72,12 @@ CACHES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_dev',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -101,5 +108,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
     #os.path.join(PROJECT_ROOT, 'templates').replace('\\', '/'),
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
 #AUTH_PROFILE_MODULE = 'users.UserProfile'
